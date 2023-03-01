@@ -3,6 +3,7 @@
 2.this can be used to invoke current class method (implicitly)
 3.this() can be used to invoke current class constructor.
 4.this can be passed as an argument in the method call.
+
 5.this can be passed as argument in the constructor call.
 6.this can be used to return the current class instance from the method.
 */
@@ -37,7 +38,7 @@ class A {
 
 class B {
     B() {
-        System.out.println("hello a");
+        System.out.println("hello B");
     }
 
     B(int x) {
@@ -68,8 +69,10 @@ class Student2 {
 }
 
 class S2 {
+    int x = 9;
+
     void m(S2 obj) {
-        System.out.println("method is invoked");
+        System.out.println("method is invoked And Value is " + obj.x);
     }
 
     void p() {
@@ -77,33 +80,49 @@ class S2 {
     }
 }
 
-class C{  
-    A4 obj;  
-    C(A4 obj){  
-      this.obj=obj;  
-    }  
-    void display(){  
-      System.out.println(obj.data);//using data member of A4 class  
-    }  
-  } 
+class C {
+    A4 obj;
 
-  class A4{  
-    int data=10;  
-    A4(){  
-     C cobj=new C(this);  
-     cobj.display();  
-    }  
-  }
+    C(A4 obj) {
+        this.obj = obj;
+    }
+
+    void display() {
+        System.out.println(obj.data);// using data member of A4 class
+    }
+}
+
+class A4 {
+    int data = 10;
+
+    A4() {
+        C cobj = new C(this);
+        cobj.display();
+    }
+}
+
+class D {
+    D getD() {
+        return this;
+    }
+
+    void msg() {
+        System.out.println("Hello java");
+    }
+}
+
 public class ThisExample {
     public static void main(String args[]) {
-        //1.this can be used to refer current class instance variable.
+        // 1.this can be used to refer current class instance variable.
         Student s1 = new Student(111, "ankit", 5000f);
         Student s2 = new Student(112, "sumit", 6000f);
         s1.display();
         s2.display();
+
         // 2.this can be used to invoke current class method (implicitly)
         A a = new A();
         a.n();
+
         // 3.this() : to invoke current class constructor
         B b = new B(10);
 
@@ -112,11 +131,15 @@ public class ThisExample {
         s2obj1.display();
         s2obj2.display();
 
-        //4.this: to pass as an argument in the method
-        S2 s2obj = new S2();  
-        s2obj.p();  
-        //this: to pass as argument in the constructor call
-        A4 a4obj =new A4();  
+        // 4.this: to pass as an argument in the method
+        S2 s2obj = new S2();
+        s2obj.p();
+
+        // this: to pass as argument in the constructor call
+        A4 a4obj = new A4();
+
+        //this can be used to return the current class instance from the method.
+        new D().getD().msg();  
 
     }
 }
