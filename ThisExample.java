@@ -7,7 +7,6 @@
 5.this can be passed as argument in the constructor call.
 6.this can be used to return the current class instance from the method.
 */
-
 class Student {
     int rollno;
     String name;
@@ -23,7 +22,6 @@ class Student {
         System.out.println(rollno + " " + name + " " + fee);
     }
 }
-
 class A {
     void m() {
         System.out.println("hello m");
@@ -67,7 +65,6 @@ class Student2 {
         System.out.println(rollno + " " + name + " " + course + " " + fee);
     }
 }
-
 class S2 {
     int x = 9;
 
@@ -91,7 +88,6 @@ class C {
         System.out.println(obj.data);// using data member of A4 class
     }
 }
-
 class A4 {
     int data = 10;
 
@@ -110,7 +106,6 @@ class D {
         System.out.println("Hello java");
     }
 }
-
 public class ThisExample {
     public static void main(String args[]) {
         // 1.this can be used to refer current class instance variable.
@@ -135,11 +130,10 @@ public class ThisExample {
         S2 s2obj = new S2();
         s2obj.p();
 
-        // this: to pass as argument in the constructor call
+        // 5.this: to pass as argument in the constructor call
         A4 a4obj = new A4();
 
-        //this can be used to return the current class instance from the method.
+        //6.this can be used to return the current class instance from the method.
         new D().getD().msg();  
-
     }
 }
