@@ -4,7 +4,6 @@ class Farm
     double width;  
     double area(){return length*width;} 
 }
-
 public class FarmExe1
 {
     // class with main method().  
