@@ -1,5 +1,31 @@
 package Thread;
 
+class MyThread extends Thread
+{
+    public void run()
+    {
+        for(int i=0;i<=5;i++)
+        {
+            System.out.println("Inside Thread : : MyThread");
+            try{Thread.sleep(100);}catch(Exception e){}
+        }
+
+    }
+}
+
+class MyRunnable implements Runnable
+{
+
+    @Override
+    public void run() {
+        for(int i=0;i<=5;i++)
+        {
+            System.out.println("Inside Thread : : MyRunnable");
+            try{Thread.sleep(100);}catch(Exception e){}
+        }
+    }
+    
+}
 public class ThreadCreation {
     public static void main(String args[])throws Exception
     {
@@ -22,6 +48,12 @@ public class ThreadCreation {
                 try{Thread.sleep(100);}catch(Exception e){}
             }
         });
+        Thread T3 = new Thread(new MyThread());
+        Thread T4 = new Thread(new MyRunnable());
+
+        T3.start();
+        T4.start();
+
 
         T1.start();
         T2.start();
