@@ -2,7 +2,7 @@ package Thread;
 
 class Table
 {
-    public synchronized void  printTable(int n)
+    public  synchronized void  printTable(int n)
     {
         for(int i=0;i<5;i++)
         {
@@ -16,6 +16,23 @@ class Table
                 System.out.println(ie);
             }  
         }
+        //need to remove synchronized key word in front of method
+        // synchronized(this)
+        // {
+        //     for(int i=0;i<5;i++)
+        //     {
+        //         System.out.println(n * i);  
+        //         try
+        //         {  
+        //             Thread.sleep(500);  
+        //         }
+        //         catch(InterruptedException ie)
+        //         {
+        //             System.out.println(ie);
+        //         }  
+        //     }
+        // }
+
     }    
 }
 
