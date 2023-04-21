@@ -18,7 +18,7 @@ public class JavaYieldExp extends Thread
         {  
             // Control passes to child thread  
             t1.yield();  
-            System.out.println(Thread.currentThread().getName() + " in control");  
+            System.out.println(Thread.currentThread().getName() + " in control"+"State : :"+t1.getState());  
         }  
     }  
 }  

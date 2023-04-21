@@ -6,11 +6,15 @@ public class JavaResumeExp extends Thread
     {    
         for(int i=1; i<5; i++)  
         {    
+            if(i==3)
+            {
+                Thread.currentThread().yield();;
+            }
             try  
             {  
                 // thread to sleep for 500 milliseconds  
                  sleep(500);  
-                 System.out.println(Thread.currentThread().getName());    
+                 System.out.println(Thread.currentThread().getName()+"   State : : "+Thread.currentThread().getState());    
             }catch(InterruptedException e){System.out.println(e);}    
             System.out.println(i);    
         }    

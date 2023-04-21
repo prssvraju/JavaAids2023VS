@@ -20,8 +20,11 @@ class Main
         Thread t1 = new Thread(tlc);
         t1.setName("Thread(1)");
         t1.start();
+
         Thread.sleep(1000);
         System.out.println(t1.getName()+" in main and is in "+t1.getState()+" state");
+        System.out.println(Thread.currentThread().getName()+" in main and is in "+Thread.currentThread().getState()+" state");
+
     
 
     }
