@@ -33,15 +33,16 @@ public class ThreadStop {
     {
         Thread1 t1 = new Thread1();
         Thread2 t2 = new Thread2();
-        t1.start();
-        try
-        {
-            t1.join();
-        }
-        catch(InterruptedException e)
-        {
-            e.printStackTrace();
-        }
+        // To see Wating State
+        // t1.start();
+        // try
+        // {
+        //     t1.join();
+        // }
+        // catch(InterruptedException e)
+        // {
+        //     e.printStackTrace();
+        // }
 
         t2.start();
         System.out.println("State fo T2 "+t2.isAlive()+"State :"+t2.getState());
