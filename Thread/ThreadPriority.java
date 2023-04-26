@@ -1,9 +1,13 @@
 package Thread;
+//scheduler to decide which thread to dispatch  to the CPU from the group of waiting threads in their runnable state.
+
+//When several  threads of different priorities are present, it is quite likely that a  thread with the lowest priority may not get a chance to possess  CPU. This is called starvation.
+
 
 class One extends Thread {
     public void run() {
         for (int i = 1; i <= 5; i++) {
-            System.out.println("From Thread One: i =" + i);
+            System.out.println("From Thread One: i =" + i+"  Thread Name:"+Thread.currentThread().getName());
             try {
                 sleep(100);
             } catch (InterruptedException e) {
@@ -18,7 +22,7 @@ class One extends Thread {
 class Two extends Thread {
     public void run() {
         for (int j = 1; j <= 5; j++) {
-            System.out.println("From Thread Two: j =" + j);
+            System.out.println("From Thread Two: j =" + j+"  Thread Name:"+Thread.currentThread().getName());
             try {
                 sleep(100);
             } catch (InterruptedException e) {
@@ -33,7 +37,7 @@ class Two extends Thread {
 class Three extends Thread {
     public void run() {
         for (int k = 1; k <= 5; k++) {
-            System.out.println("From Thread Three: k =" + k);
+            System.out.println("From Thread Three: k =" + k+"  Thread Name:"+Thread.currentThread().getName());
             try {
                 sleep(100);
             } catch (InterruptedException e) {
