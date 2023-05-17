@@ -12,6 +12,7 @@ public class FirstGui {
         bt = new JButton("Click");
         bt.setBounds(40, 40, 100, 80);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    
         f.add(bt);
         f.setSize(300, 300);
         f.setLayout(null);
